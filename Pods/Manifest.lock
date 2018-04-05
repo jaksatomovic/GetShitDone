@@ -1,0 +1,32 @@
+PODS:
+  - AHKActionSheet (0.5.4)
+  - AMPopTip (3.1.4)
+  - CVCalendar (1.6.1)
+  - Realm (3.1.1):
+    - Realm/Headers (= 3.1.1)
+  - Realm/Headers (3.1.1)
+  - RealmSwift (3.1.1):
+    - Realm (= 3.1.1)
+  - SwipeTransition (0.1.4)
+  - UICountingLabel (1.4.1)
+
+DEPENDENCIES:
+  - AHKActionSheet
+  - AMPopTip
+  - CVCalendar
+  - RealmSwift
+  - SwipeTransition
+  - UICountingLabel
+
+SPEC CHECKSUMS:
+  AHKActionSheet: f0b312b5c689f72924d231c39dae140ecd5c1d46
+  AMPopTip: 74c343e06fb7cd859fa2bd672e45edb97836f1b0
+  CVCalendar: 505c11b11a088b43f159806e791eba1c2540853b
+  Realm: 42d1c38a5b1bbcc828b48a7ce702cb86fc68adf4
+  RealmSwift: d31937ca6a6ee54acde64ec839523c0a3c04924b
+  SwipeTransition: c5542be9fa21ba3b04ce16d7b3e732a99d2e46da
+  UICountingLabel: faf890b505d96312e324a86718f031fafffb0ccb
+
+PODFILE CHECKSUM: 32c5562c705c0dedb5ffbb000a4e1fe00a9217e8
+
+COCOAPODS: 1.4.0
