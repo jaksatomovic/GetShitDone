@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6026A46D2077B0310052F61D /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6026A46C2077B0310052F61D /* CalendarController.swift */; };
 		605C130A20754F750045D154 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605C130920754F750045D154 /* AppDelegate.swift */; };
 		605C130C20754F750045D154 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605C130B20754F750045D154 /* MainController.swift */; };
 		605C131120754F770045D154 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 605C131020754F770045D154 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		09571EFB46CD387A1F8F64D5 /* Pods-GetSh*tDone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GetSh*tDone.release.xcconfig"; path = "Pods/Target Support Files/Pods-GetSh*tDone/Pods-GetSh*tDone.release.xcconfig"; sourceTree = "<group>"; };
 		2A8F749C94003A3EDBD359D8 /* Pods_GetSh_tDone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GetSh_tDone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6026A46C2077B0310052F61D /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
 		605C130620754F750045D154 /* GetSh*tDone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GetSh*tDone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		605C130920754F750045D154 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		605C130B20754F750045D154 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				605C131020754F770045D154 /* Assets.xcassets */,
 				605C131520754F770045D154 /* Info.plist */,
 				605C131B20754FEA0045D154 /* SwipeNavigationController.swift */,
+				6026A46C2077B0310052F61D /* CalendarController.swift */,
 			);
 			path = "GetSh*tDone";
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				605C131C20754FEA0045D154 /* SwipeNavigationController.swift in Sources */,
 				605C131E20756FEB0045D154 /* UIView+Anchors.swift in Sources */,
 				6084C9D320762CF80012CDFE /* ExpandingCellTransition.swift in Sources */,
+				6026A46D2077B0310052F61D /* CalendarController.swift in Sources */,
 				605C130C20754F750045D154 /* MainController.swift in Sources */,
 				6084C9D520762D230012CDFE /* DetailController.swift in Sources */,
 				605C130A20754F750045D154 /* AppDelegate.swift in Sources */,
@@ -370,7 +374,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "solutions.canarin.GetSh-tDone";
+				PRODUCT_BUNDLE_IDENTIFIER = solutions.canarin.GetShitDone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -389,7 +393,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "solutions.canarin.GetSh-tDone";
+				PRODUCT_BUNDLE_IDENTIFIER = solutions.canarin.GetShitDone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

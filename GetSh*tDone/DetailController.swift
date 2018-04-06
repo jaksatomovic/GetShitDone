@@ -37,7 +37,7 @@ class DetailController: UIViewController {
         label.numberOfLines = 0
         label.sizeToFit()
         label.text = "FUCKING fairy won't come and do it!"
-        label.font = UIFont.systemFont(ofSize: 60, weight: UIFont.Weight(rawValue: 16))
+        label.font = UIFont.systemFont(ofSize: 58, weight: UIFont.Weight(rawValue: 16))
         return label
     }()
     
@@ -47,6 +47,7 @@ class DetailController: UIViewController {
         button.setImage(#imageLiteral(resourceName: "done").withRenderingMode(.alwaysTemplate) , for: .normal)
         button.tintColor = .black
 //        button.imageEdgeInsets = UIEdgeInsetsMake(-17, 0, 17, 0)
+        button.addTarget(self, action: #selector(dismissView), for: .touchUpInside)
         button.setTitleColor(UIColor.black, for: .normal)
         button.layer.cornerRadius = 30
         button.clipsToBounds = true
@@ -73,7 +74,7 @@ class DetailController: UIViewController {
         
         messageLabel.anchor(headerView.bottomAnchor, left: view.leftAnchor, bottom: doneButton.topAnchor, right: view.rightAnchor, topConstant: 30, leftConstant: 16, bottomConstant: 16, rightConstant: 8, widthConstant: 0, heightConstant: 0)
         
-        doneButton.anchor(nil, left: nil, bottom: view.centerYAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 24, rightConstant: 16, widthConstant: 60, heightConstant: 60)
+        doneButton.anchor(nil, left: nil, bottom: view.centerYAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 16, widthConstant: 60, heightConstant: 60)
         
         titleLabel.text = _title
         
@@ -94,7 +95,7 @@ class DetailController: UIViewController {
         }
     }
     
-    @objc func handleCloseButton(_ sender: AnyObject) {
+    @objc func dismissView() {
         dismiss(animated: true, completion: nil)
     }
     

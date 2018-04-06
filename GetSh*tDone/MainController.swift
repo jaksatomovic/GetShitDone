@@ -34,7 +34,10 @@ class MainController: UIViewController {
     var addButton: UIButton = {
         let button = UIButton()
         button.setImage(#imageLiteral(resourceName: "add").withRenderingMode(.alwaysOriginal), for: .normal)
-//        button.addTarget(self, action: #selector(addButtonPressed), for: .touchUpInside)
+        button.backgroundColor = .black
+        button.addTarget(self, action: #selector(showCalendar), for: .touchUpInside)
+        button.layer.cornerRadius = 22.5
+        button.clipsToBounds = true
         return button
     }()
     
@@ -87,7 +90,7 @@ class MainController: UIViewController {
         titleLabel.anchor(countingLabel.topAnchor, left: countingLabel.rightAnchor, bottom: titleLabel.bottomAnchor, right: headerView.rightAnchor, topConstant: 0, leftConstant: 12, bottomConstant: 0, rightConstant: 16, widthConstant: 0, heightConstant: 0)
         
         tableView.anchor(headerView.bottomAnchor, left: view.leftAnchor, bottom: addButton.topAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 8, rightConstant: 0, widthConstant: 0, heightConstant: 0)
-        addButton.anchor(nil, left: view.leftAnchor, bottom: view.bottomAnchor, right: nil, topConstant: 0, leftConstant: 16, bottomConstant: 24, rightConstant: 0, widthConstant: 45, heightConstant: 45)
+        addButton.anchor(nil, left: view.leftAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, right: nil, topConstant: 0, leftConstant: 16, bottomConstant: 8, rightConstant: 0, widthConstant: 45, heightConstant: 45)
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         
@@ -96,6 +99,11 @@ class MainController: UIViewController {
         countingLabel.text = "\(tasks.count)"
         
     }
+    
+    @objc func showCalendar() {
+        self.present(CalendarController(), animated: true, completion: nil)
+    }
+    
 }
 
 // MARK: UITableViewDelegate
@@ -146,11 +154,11 @@ extension MainController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let modifyAction = UIContextualAction(style: .normal, title:  "Update", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-            print("Update action ...")
+        let modifyAction = UIContextualAction(style: .normal, title:  "Delete", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            print("Delete action ...")
             success(true)
         })
-        modifyAction.backgroundColor = .blue
+        modifyAction.backgroundColor = .red
         
         return UISwipeActionsConfiguration(actions: [modifyAction])
         
