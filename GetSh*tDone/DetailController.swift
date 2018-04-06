@@ -37,16 +37,18 @@ class DetailController: UIViewController {
         label.numberOfLines = 0
         label.sizeToFit()
         label.text = "FUCKING fairy won't come and do it!"
-        label.font = UIFont.systemFont(ofSize: 32, weight: UIFont.Weight(rawValue: 16))
+        label.font = UIFont.systemFont(ofSize: 60, weight: UIFont.Weight(rawValue: 16))
         return label
     }()
     
     var doneButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .white
-        button.setTitle("DONE", for: .normal)
+        button.setImage(#imageLiteral(resourceName: "done").withRenderingMode(.alwaysTemplate) , for: .normal)
+        button.tintColor = .black
+//        button.imageEdgeInsets = UIEdgeInsetsMake(-17, 0, 17, 0)
         button.setTitleColor(UIColor.black, for: .normal)
-        button.layer.cornerRadius = 40
+        button.layer.cornerRadius = 30
         button.clipsToBounds = true
         return button
     }()
@@ -71,7 +73,7 @@ class DetailController: UIViewController {
         
         messageLabel.anchor(headerView.bottomAnchor, left: view.leftAnchor, bottom: doneButton.topAnchor, right: view.rightAnchor, topConstant: 30, leftConstant: 16, bottomConstant: 16, rightConstant: 8, widthConstant: 0, heightConstant: 0)
         
-        doneButton.anchor(nil, left: view.centerXAnchor, bottom: view.centerYAnchor, right: nil, topConstant: 0, leftConstant: -40, bottomConstant: -80, rightConstant: 0, widthConstant: 80, heightConstant: 80)
+        doneButton.anchor(nil, left: nil, bottom: view.centerYAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 24, rightConstant: 16, widthConstant: 60, heightConstant: 60)
         
         titleLabel.text = _title
         

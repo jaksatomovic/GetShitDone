@@ -133,13 +133,14 @@ extension MainController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let closeAction = UIContextualAction(style: .normal, title:  "Close", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
-            print("OK, marked as Closed")
+        let doneAction = UIContextualAction(style: .normal, title:  "", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            print("OK, marked as DONE")
             success(true)
         })
-        closeAction.backgroundColor = .purple
+        doneAction.backgroundColor = .black
+        doneAction.image = #imageLiteral(resourceName: "done").withRenderingMode(.alwaysOriginal)
         
-        return UISwipeActionsConfiguration(actions: [closeAction])
+        return UISwipeActionsConfiguration(actions: [doneAction])
         
     }
     
