@@ -16,11 +16,14 @@ class CalendarController: UIViewController {
     var calendarMenu: CVCalendarMenuView = {
         let view = CVCalendarMenuView()
         view.backgroundColor = .black
+        view.dayOfWeekFont = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight(rawValue: 6))
+        view.dayOfWeekTextColor = .white
         return view
     }()
     var calendarContent: CVCalendarView = {
         let view = CVCalendarView()
         view.backgroundColor = .black
+        view.tintColor = .white
         return view
     }()
     
@@ -29,7 +32,29 @@ class CalendarController: UIViewController {
         label.text = "50"
         label.textColor = .white
         label.textAlignment = .center
-        label.font = UIFont.init(name: "KaushanScript-Regular", size: 34.0)
+        label.font = UIFont.systemFont(ofSize: 24, weight: UIFont.Weight(rawValue: 16))
+        return label
+    }()
+    
+    var titleLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .white
+        label.textAlignment = .left
+        label.numberOfLines = 1
+        label.sizeToFit()
+        label.text = "CALENDAR"
+        label.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight(rawValue: 12))
+        return label
+    }()
+    
+    var monthLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .red
+        label.textAlignment = .left
+        label.numberOfLines = 1
+        label.sizeToFit()
+        label.text = "NOVEMBER"
+        label.font = UIFont.systemFont(ofSize: 32, weight: UIFont.Weight(rawValue: 16))
         return label
     }()
     
@@ -43,7 +68,7 @@ class CalendarController: UIViewController {
         //                                     fromFrame: CGRect(x: view.frame.size.width - 28, y: -10, width: 1, height: 1))
         
         //        updateStats()
-        percentageLabel.text = "dateLabelString(Date())"
+        percentageLabel.text = "6 SHITS TODO"
         calendarContent.contentController.refreshPresentedMonth()
     }
     
@@ -73,12 +98,19 @@ class CalendarController: UIViewController {
         view.addSubview(percentageLabel)
         view.addSubview(calendarContent)
         view.addSubview(calendarMenu)
+        view.addSubview(monthLabel)
+        view.addSubview(titleLabel)
+
+
+        titleLabel.anchor(view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, bottom: monthLabel.topAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 16, bottomConstant: 8, rightConstant: 16, widthConstant: 0, heightConstant: 30)
         
-        calendarMenu.anchor(view.topAnchor, left: view.leftAnchor, bottom: calendarContent.topAnchor, right: view.rightAnchor, topConstant: 50, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 15)
+        monthLabel.anchor(titleLabel.bottomAnchor, left: view.leftAnchor, bottom: calendarMenu.topAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 16, bottomConstant: 8, rightConstant: 16, widthConstant: 0, heightConstant: 40)
+        
+        calendarMenu.anchor(monthLabel.bottomAnchor, left: view.leftAnchor, bottom: calendarContent.topAnchor, right: view.rightAnchor, topConstant: 50, leftConstant: 16, bottomConstant: 0, rightConstant: 16, widthConstant: 0, heightConstant: 30)
         calendarContent.anchor(calendarMenu.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: view.frame.height/2)
         
         percentageLabel.anchor(calendarContent.bottomAnchor, left: view.leftAnchor, bottom: nil, right: view.rightAnchor, topConstant: 20, leftConstant: 0, bottomConstant: 0, rightConstant: 0, widthConstant: 0, heightConstant: 50)
-        
+                
     }
     
     
@@ -131,8 +163,17 @@ extension CalendarController: CVCalendarViewDelegate, CVCalendarMenuViewDelegate
         return UIColor.white
     }
     
+    func dayLabelWeekdayDisabledColor() -> UIColor {
+        return UIColor.white
+    }
+    
+    func dayLabelPresentWeekdayTextColor() -> UIColor {
+        return UIColor.white
+    }
+    
     func presentedDateUpdated(_ date: CVDate) {
         print(date.globalDescription)
+        monthLabel.text = date.globalDescription
     }
 }
 
